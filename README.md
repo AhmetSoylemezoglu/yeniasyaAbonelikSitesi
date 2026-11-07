@@ -10,7 +10,13 @@ A simple link-hub website for Yeni Asya. Visitors pick from a list of links:
 
 ## Status
 
-🚧 Work in progress. Link URLs are still to be added.
+🚧 Work in progress. Static site (`index.html` + `style.css`), Turkish, mobile-first.
+
+Links so far:
+
+- iOS: https://apps.apple.com/us/app/yeni-asya-dijital/id6758656907
+- Android: https://play.google.com/store/apps/details?id=com.yeniasya.books&hl=tr&pli=1
+- YouTube (Yeni Asya TV): https://www.youtube.com/@YeniAsyaTV
 
 ## Repository
 

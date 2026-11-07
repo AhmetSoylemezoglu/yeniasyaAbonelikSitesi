@@ -1,0 +1,52 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #6a11cb, #2575fc 50%, #00c6ff);
+  background-attachment: fixed;
+}
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+h1 {
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 2.4rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.sub { text-align: center; margin: 0 0 28px; opacity: .92; }
+section {
+  background: rgba(255,255,255,.16);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 8px 16px 6px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin: 14px 0 10px;
+}
+.btn {
+  display: block;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: transform .15s;
+}
+.btn:hover, .btn:focus { transform: translateY(-3px) scale(1.02); }
+.ios     { background: linear-gradient(135deg, #434343, #000); }
+.android { background: linear-gradient(135deg, #3ddc84, #0f9d58); }
+.youtube { background: linear-gradient(135deg, #ff512f, #dd2476); }
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn img { width: 24px; height: 24px; filter: invert(1); }
