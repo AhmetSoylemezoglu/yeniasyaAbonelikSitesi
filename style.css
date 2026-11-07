@@ -1,52 +1,128 @@
+:root {
+  --bg: #3b0810;
+  --bg-2: #6e1220;
+  --gold-1: #f6e3a1;
+  --gold-2: #d4af37;
+  --gold-3: #8a6d1d;
+  --gold: linear-gradient(135deg, var(--gold-1), var(--gold-2) 45%, var(--gold-3));
+  --text: #ffffff;
+  --serif: "Montserrat", system-ui, Arial, sans-serif;
+}
 * { box-sizing: border-box; }
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #6a11cb, #2575fc 50%, #00c6ff);
-  background-attachment: fixed;
+  font-family: "Montserrat", system-ui, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(ellipse at top, var(--bg-2), var(--bg) 70%) fixed;
 }
 main {
   max-width: 480px;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 48px 16px 40px;
 }
+
+/* Başlık */
 h1 {
+  font-family: var(--serif);
   text-align: center;
-  margin: 0 0 6px;
-  font-size: 2.4rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,.25);
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  background: var(--gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.sub { text-align: center; margin: 0 0 28px; opacity: .92; }
+.sub {
+  text-align: center;
+  margin: 0 0 12px;
+  opacity: .9;
+}
+.divider {
+  height: 1px;
+  margin: 18px auto 28px;
+  width: 60%;
+  background: linear-gradient(90deg, transparent, var(--gold-2) 42%, transparent 46%, transparent 54%, var(--gold-2) 58%, transparent);
+  position: relative;
+}
+.divider::after {
+  content: "◆";
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: .7rem;
+  color: var(--gold-2);
+}
+
+/* Bölümler */
 section {
-  background: rgba(255,255,255,.16);
-  backdrop-filter: blur(6px);
-  border-radius: 20px;
-  padding: 8px 16px 6px;
-  margin-bottom: 20px;
+  border: 1px solid var(--gold-3);
+  border-radius: 6px;
+  padding: 6px 14px 8px;
+  margin-bottom: 22px;
+  background: rgba(255,255,255,.02);
+  box-shadow: inset 0 0 0 4px var(--bg), inset 0 0 0 5px rgba(212,175,55,.35);
 }
 h2 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin: 14px 0 10px;
-}
-.btn {
-  display: block;
-  padding: 16px;
-  margin-bottom: 12px;
-  border-radius: 14px;
-  color: #fff;
-  text-decoration: none;
+  font-family: var(--serif);
+  font-size: .85rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,.25);
-  transition: transform .15s;
+  margin: 18px 0 14px;
+  background: var(--gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.btn:hover, .btn:focus { transform: translateY(-3px) scale(1.02); }
-.ios     { background: linear-gradient(135deg, #434343, #000); }
-.android { background: linear-gradient(135deg, #3ddc84, #0f9d58); }
-.youtube { background: linear-gradient(135deg, #ff512f, #dd2476); }
-.btn { display: flex; align-items: center; justify-content: center; gap: 10px; }
-.btn img { width: 24px; height: 24px; filter: invert(1); }
+
+/* Uygulama kutuları */
+.apps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.app { border: 1px solid rgba(212,175,55,.25); border-radius: 4px; padding: 10px; }
+.app h3 {
+  min-height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3;
+  font-weight: 700;
+  font-size: .8rem;
+  margin: 0 0 10px;
+  text-align: center;
+  letter-spacing: .04em;
+  color: #fff;
+}
+
+/* Butonlar */
+.btn {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  margin-bottom: 10px;
+  border: 1px solid var(--gold-2);
+  border-radius: 3px;
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  font-size: .95rem;
+  letter-spacing: .05em;
+  transition: background .2s, color .2s;
+}
+.btn:hover, .btn:focus {
+  background: var(--gold);
+  color: var(--bg);
+}
+.btn img {
+  width: 20px; height: 20px;
+  filter: invert(80%) sepia(45%) saturate(600%) hue-rotate(5deg) brightness(95%);
+  transition: filter .2s;
+}
+.btn:hover img, .btn:focus img { filter: brightness(0) saturate(100%); }
+.app .btn { padding: 11px 6px; font-size: .8rem; gap: 6px; margin-bottom: 8px; }
+.app .btn img { width: 16px; height: 16px; }
